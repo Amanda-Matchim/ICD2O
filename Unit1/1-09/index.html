@@ -35,6 +35,7 @@
   <button id="searchButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
     Button
   </button>
+  <button id="clearButton" class="mdl-button mdl-js-button">Clear</botton>
   <script>
     const button = document.getElementById('searchButton');
     const input = document.getElementById('userInput');
@@ -43,6 +44,10 @@
       const q = (input.value || '').trim();
       const url = 'https://www.google.com/search?q=' + encodeURIComponent(q);
       window.open(url, '_blank');
+    });
+    document.getElementById('clearButton').addEventListener('click', () => {
+      document.getElementById('userInput').value = '';
+    document.getElementById('userInput').focus();
     });
   </script>
 </body>
